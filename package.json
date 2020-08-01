@@ -1,0 +1,23 @@
+{
+  "name": "webrtc",
+  "version": "1.0.0",
+  "description": "webRTC sandbox for real-time video com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akshit8/webRTC.git"
+  },
+  "keywords": [
+    "RTC",
+    "sandbox"
+  ],
+  "author": "Akshit Sadana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akshit8/webRTC/issues"
+  },
+  "homepage": "https://github.com/akshit8/webRTC#readme"
+}
