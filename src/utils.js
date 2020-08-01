@@ -8,12 +8,11 @@ const connectToRoom = (req, res, next) => {
     res.render('room', { roomId: req.params.roomId });
 };
 
-const joinRoom = (roomId, userId) => {
-    console.log(roomId, userId);
-};
-
 const socketEventListener = (socket) => {
-    socket.on('join-room',joinRoom);
+    socket.on('join-room',(roomId, userId) => {
+        socket.join(roomId);
+        socket.to(roomId).broadcast.emit('user-connected', userId);
+    });
 };
 
 module.exports = {
