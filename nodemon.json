@@ -1,5 +1,5 @@
 {
-    "watch": ["src"],
+    "watch": ["src", "public"],
     "ext": ".js, .html",
     "ignore": [],
     "exec": "node ./src/server.js --HOST=0.0.0.0 --PORT=3000"
