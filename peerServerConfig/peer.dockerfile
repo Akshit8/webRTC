@@ -7,18 +7,16 @@ LABEL maintainer="akshitsadana@gmail.com"
 # setting working directory
 WORKDIR /app
 
-# copying package files
-COPY package*json ./
-
 # installing production dependencies
-RUN npm ci --only=production --no-optional
+RUN npm install -g peer
 
 # copying all files generated inside build folder
-COPY . .
+COPY ./script.sh ./
 
-# exposing network interface 3000
-# make sure app runs on 0.0.0.0
-EXPOSE 3000
+RUN chmod +x ./script.sh
+
+# exposing network interface 3001   
+EXPOSE 3001
 
 # triggering start script on formation of container
-CMD ["npm", "start"]
+ENTRYPOINT ["sh", "./script.sh"]
