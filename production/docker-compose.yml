@@ -14,3 +14,14 @@ services:
     restart: unless-stopped
     ports: 
       - 3000:3000
+
+  webserver: 
+    image: nginx:1.19.2-alpine
+    container_name: web-server
+    restart: unless-stopped
+    environment: 
+      - NGINX_HOST=localhost
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
