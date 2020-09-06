@@ -13,8 +13,10 @@ COPY package*json ./
 # installing production dependencies
 RUN npm ci --only=production --no-optional
 
-# copying all files generated inside build folder
-COPY . .
+# moving all required folders
+ADD src ./src
+ADD views ./views
+ADD public ./public
 
 # exposing network interface 3000
 # make sure app runs on 0.0.0.0
