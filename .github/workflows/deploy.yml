@@ -23,7 +23,7 @@ jobs:
 
       - name: build app image
         run: |
-          docker build -t akshit8/webRTC:latest -f ./app.dockerfile .
+          docker build -t akshit8/webrtc:latest -f ./app.dockerfile .
 
       - name: push peer server image
         run: |
@@ -31,6 +31,6 @@ jobs:
 
       - name: push app image
         run: |
-          docker push akshit8/webRTC:latest
+          docker push akshit8/webrtc:latest
 
       
