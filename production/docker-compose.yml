@@ -1,0 +1,27 @@
+version: '3'
+
+services: 
+  peer:
+    image: akshit8/peer:latest
+    container_name: peer-server
+    restart: unless-stopped
+    ports: 
+      - 3001:3001
+
+  app: 
+    image: akshit8/webrtc:latest
+    container_name: app-server
+    restart: unless-stopped
+    ports: 
+      - 3000:3000
+
+  webserver: 
+    image: nginx:1.19.2-alpine
+    container_name: web-server
+    restart: unless-stopped
+    environment: 
+      - NGINX_HOST=localhost
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
