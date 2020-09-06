@@ -1,3 +1,6 @@
+# dockerfile for peerJs server
+# peerjs provides peer-to-peer connection for  browser's webRTC
+
 # pulling base image of node 14
 FROM node:14.8.0-alpine3.12
 
@@ -7,12 +10,12 @@ LABEL maintainer="akshitsadana@gmail.com"
 # setting working directory
 WORKDIR /app
 
-# installing production dependencies
+# installing dependencies
 RUN npm install -g peer
 
-# copying all files generated inside build folder
+# copying start scipt
 COPY ./script.sh ./
-
+# providing exec permissions to start scipt
 RUN chmod +x ./script.sh
 
 # exposing network interface 3001   
