@@ -3,7 +3,7 @@ name: webRTC CI
 on:
   push:
     branches:
-      - dev
+      - master
 
 jobs:
   build:
