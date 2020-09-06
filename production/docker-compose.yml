@@ -1,0 +1,16 @@
+version: '3'
+
+services: 
+  peer:
+    image: akshit8/peer:latest
+    container_name: peer-server
+    restart: unless-stopped
+    ports: 
+      - 3001:3001
+
+  app: 
+    image: akshit8/webrtc:latest
+    container_name: app-server
+    restart: unless-stopped
+    ports: 
+      - 3000:3000
