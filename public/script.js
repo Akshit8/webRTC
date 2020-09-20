@@ -5,7 +5,8 @@ const myPeer = new Peer(undefined, {
   host: '/',
   port: '80',
   path: '/peerServer',
-  key: 'keyTack8ba6'
+  key: 'keyTack8ba6',
+  proxied: true
 });
 
 const myVideo = document.createElement('video');
