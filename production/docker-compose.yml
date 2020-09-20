@@ -5,15 +5,15 @@ services:
     image: akshit8/peer:latest
     container_name: peer-server
     restart: unless-stopped
-    ports: 
-      - 3001:3001
+    networks: 
+      - rtc-network
 
   app: 
     image: akshit8/webrtc:latest
     container_name: app-server
     restart: unless-stopped
-    ports: 
-      - 3000:3000
+    networks:
+      - rtc-network
 
   webserver: 
     image: nginx:1.19.2-alpine
@@ -25,3 +25,11 @@ services:
       - 80:80
     volumes:
       - ./nginx:/etc/nginx/conf.d
+    depends_on:
+      - app
+    networks:
+      - rtc-network
+
+networks:
+  rtc-network:
+    driver: bridge
