@@ -5,8 +5,8 @@ services:
     image: akshit8/peer:latest
     container_name: peer-server
     restart: unless-stopped
-    ports:
-      - 3001:3001
+    networks: 
+      - rtc-network
 
   app: 
     image: akshit8/webrtc:latest

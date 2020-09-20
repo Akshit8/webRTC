@@ -3,7 +3,9 @@ const videoGrid = document.getElementById('video-grid');
 
 const myPeer = new Peer(undefined, {
   host: '/',
-  port: '3001'
+  port: '80',
+  path: '/peerServer',
+  key: 'keyTack8ba6'
 });
 
 const myVideo = document.createElement('video');
