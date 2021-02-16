@@ -15,6 +15,9 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/', redirectToNewRoom);
+app.get('/ascii', (req, res) => {
+    res.render('ascii', {});
+});
 app.get('/:roomId', connectToRoom);
 
 io.on('connection', socketEventListener);
